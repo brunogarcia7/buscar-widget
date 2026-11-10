@@ -13,7 +13,6 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.view.animation.OvershootInterpolator
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -92,12 +91,17 @@ class AppPickerActivity : AppCompatActivity() {
             val chip = inflater.inflate(R.layout.item_style, styleRow, false)
             bindStyleChip(chip, style)
             chip.isSelected = (style == current)
-            chip.setOnClickListener {
+            val onPick = {
                 SearchConfig.setWidgetStyle(this, style)
                 updateChipSelection(style)
-                popScale(it)
                 refreshAllWidgets(this)
                 Toast.makeText(this, R.string.style_saved, Toast.LENGTH_SHORT).show()
+            }
+            if (animationsEnabled) {
+                // Toque com física de mola (iOS).
+                SpringPress.attach(chip) { onPick() }
+            } else {
+                chip.setOnClickListener { onPick() }
             }
             styleRow.addView(chip)
 
@@ -130,19 +134,6 @@ class AppPickerActivity : AppCompatActivity() {
         for (i in 0 until styleRow.childCount) {
             styleRow.getChildAt(i).isSelected = (styles[i] == selected)
         }
-    }
-
-    /** Pequeno "pop" elástico ao selecionar (feedback de toque). */
-    private fun popScale(view: View) {
-        if (!animationsEnabled) return
-        view.animate().cancel()
-        view.scaleX = 0.92f
-        view.scaleY = 0.92f
-        view.animate()
-            .scaleX(1f).scaleY(1f)
-            .setInterpolator(OvershootInterpolator(3f))
-            .setDuration(360L)
-            .start()
     }
 
     // ---------- Seção 2: app de busca ----------

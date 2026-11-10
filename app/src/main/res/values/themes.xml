@@ -13,6 +13,14 @@
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowBackground">@drawable/bg_gradient_wallpaper</item>
+        <!-- Transição de abrir/fechar estilo iOS (scale + fade). -->
+        <item name="android:windowAnimationStyle">@style/WindowAnim.IOS</item>
+    </style>
+
+    <!-- Animação de janela estilo iOS: cresce ao abrir, encolhe ao fechar. -->
+    <style name="WindowAnim.IOS" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/ios_activity_open</item>
+        <item name="android:activityCloseExitAnimation">@anim/ios_activity_close</item>
     </style>
 
     <!--

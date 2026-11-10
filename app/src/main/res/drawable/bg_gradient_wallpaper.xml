@@ -1,41 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Camada de CONTEÚDO (papel de parede) da tela. É rica e colorida de propósito
-    para o vidro ter algo vivo para refletir e desfocar (liquid glass).
-    O blur real é aplicado por RenderEffect no código (API 31+).
+    Camada de CONTEÚDO (papel de parede) da tela — paleta MONOCROMÁTICA
+    (preto / cinza / branco). Mesmo sem cor, mantém profundidade com um
+    gradiente diagonal escuro e brilhos radiais em cinza claro, dando ao vidro
+    algo para refletir e desfocar (liquid glass). O blur real vem do
+    RenderEffect no código (API 31+).
 -->
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Base: grafite -> quase preto, na diagonal. -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:angle="135"
-                android:startColor="#FF2B1055"
-                android:centerColor="#FFB5268A"
-                android:endColor="#FFFF5E62"
+                android:startColor="#FF2A2A2E"
+                android:centerColor="#FF1A1A1D"
+                android:endColor="#FF0D0D0F"
                 android:type="linear" />
         </shape>
     </item>
-    <!-- "Luz" radial no topo para dar brilho e profundidade. -->
+    <!-- Brilho cinza-claro no topo (luz difusa). -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:type="radial"
-                android:gradientRadius="520dp"
-                android:centerX="0.2"
-                android:centerY="0.1"
-                android:startColor="#66FFD36E"
-                android:endColor="#00FFD36E" />
+                android:gradientRadius="560dp"
+                android:centerX="0.22"
+                android:centerY="0.08"
+                android:startColor="#59FFFFFF"
+                android:endColor="#00FFFFFF" />
         </shape>
     </item>
+    <!-- Segundo brilho mais sutil embaixo à direita (profundidade). -->
     <item>
         <shape android:shape="rectangle">
             <gradient
                 android:type="radial"
-                android:gradientRadius="420dp"
-                android:centerX="0.95"
-                android:centerY="0.85"
-                android:startColor="#553AC0FF"
-                android:endColor="#003AC0FF" />
+                android:gradientRadius="460dp"
+                android:centerX="0.92"
+                android:centerY="0.9"
+                android:startColor="#33BFBFBF"
+                android:endColor="#00BFBFBF" />
         </shape>
     </item>
 </layer-list>

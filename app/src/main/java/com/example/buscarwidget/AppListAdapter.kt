@@ -40,17 +40,8 @@ class AppListAdapter(
         holder.selected.scaleX = if (isSelected) 1f else 0f
         holder.selected.scaleY = if (isSelected) 1f else 0f
 
-        holder.itemView.setOnClickListener { view ->
-            // Feedback elástico de toque.
-            view.animate().cancel()
-            view.scaleX = 0.97f
-            view.scaleY = 0.97f
-            view.animate()
-                .scaleX(1f).scaleY(1f)
-                .setInterpolator(OvershootInterpolator(2.5f))
-                .setDuration(320L)
-                .start()
-
+        // Feedback de toque com física de mola (iOS).
+        SpringPress.attach(holder.itemView) {
             updateSelection(item.packageName)
             onClick(item)
         }

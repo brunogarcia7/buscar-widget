@@ -20,11 +20,11 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_gradient_wallpaper" />
 
-    <!-- Camada de escurecimento ~35% (HIG: clear glass sobre mídia clara). -->
+    <!-- Véu leve só para suavizar o fundo escuro sem apagar os brilhos. -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#59000000" />
+        android:background="#26000000" />
 
     <LinearLayout
         android:id="@+id/content"

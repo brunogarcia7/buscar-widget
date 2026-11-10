@@ -24,8 +24,8 @@ android {
         applicationId = "com.example.buscarwidget"
         minSdk = 24
         targetSdk = 34
-        versionCode = 2
-        versionName = "1.1"
+        versionCode = 3
+        versionName = "1.2"
     }
 
     signingConfigs {
@@ -71,4 +71,6 @@ dependencies {
     implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    // Física de molas (spring) para feedback de toque estilo iOS.
+    implementation("androidx.dynamicanimation:dynamicanimation:1.0.0")
 }

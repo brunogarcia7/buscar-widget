@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Buscar Widget</string>
+    <string name="app_name">Aura Search</string>
     <string name="widget_search_hint">Buscar</string>
     <string name="widget_label">Pílula Buscar</string>
     <string name="widget_description">Pílula de busca estilo iOS que abre o app que você escolher.</string>
