@@ -2,7 +2,10 @@
 <resources>
     <string name="app_name">Buscar Widget</string>
     <string name="widget_search_hint">Buscar</string>
+    <string name="widget_label">Pílula Buscar</string>
     <string name="widget_description">Pílula de busca estilo iOS que abre o app que você escolher.</string>
+    <string name="dock_label">Dock de vidro</string>
+    <string name="dock_description">Faixa de vidro decorativa estilo iOS para colocar atrás dos ícones de apps.</string>
     <string name="error_app_not_found">App não encontrado. Escolha outro na lista.</string>
 
     <!-- Tela de seleção de app -->

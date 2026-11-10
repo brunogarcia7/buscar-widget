@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Metadados do widget decorativo "Dock de vidro".
+    - Largo e baixo por padrão (ocupa uma linha inteira: 5x1 células).
+    - Redimensionável nos dois sentidos para cobrir a área que o usuário quiser.
+    - Sem updatePeriodMillis: é estático, nunca precisa atualizar.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/dock_description"
+    android:initialLayout="@layout/widget_dock"
+    android:minWidth="250dp"
+    android:minHeight="60dp"
+    android:minResizeWidth="110dp"
+    android:minResizeHeight="40dp"
+    android:maxResizeWidth="400dp"
+    android:maxResizeHeight="120dp"
+    android:previewImage="@mipmap/ic_launcher"
+    android:previewLayout="@layout/widget_dock"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="5"
+    android:targetCellHeight="1"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

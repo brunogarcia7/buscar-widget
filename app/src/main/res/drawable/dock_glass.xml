@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dock de vidro (liquid glass) estilo iOS — widget DECORATIVO.
+
+    Reproduz a faixa translúcida que fica atrás dos apps na barra inferior:
+      1. Realce (highlight) claro na borda de cima = luz tocando o topo do vidro.
+      2. Corpo translúcido com gradiente vertical (mais claro em cima).
+      3. Borda hairline luminosa em volta.
+    O desfoque real do papel de parede atrás vem do launcher (onde suportado);
+    a translucidez garante o efeito de vidro em qualquer aparelho.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Camada de realce superior (aparece 1.5dp acima do corpo). -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="38dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#70FFFFFF"
+                android:centerColor="#1FFFFFFF"
+                android:endColor="#00FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- Corpo do vidro. -->
+    <item android:top="1dp" android:bottom="1dp" android:left="1dp" android:right="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="37dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="#45FFFFFF"
+                android:centerColor="#2BFFFFFF"
+                android:endColor="#38FFFFFF"
+                android:type="linear" />
+            <stroke android:width="1dp" android:color="#4DFFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Brilho suave na base, como reflexo de luz embaixo da dock. -->
+    <item android:top="1dp" android:bottom="1dp" android:left="1dp" android:right="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="37dp" />
+            <gradient
+                android:angle="90"
+                android:startColor="#28FFFFFF"
+                android:centerColor="#00FFFFFF"
+                android:endColor="#00FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+
+</layer-list>

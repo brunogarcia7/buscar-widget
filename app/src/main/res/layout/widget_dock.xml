@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Widget DECORATIVO: dock de vidro estilo iOS.
+    Apenas uma faixa de vidro que preenche a área do widget. Sem clique, sem
+    ação — serve para colocar atrás dos ícones de apps na tela inicial.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <View
+        android:id="@+id/dock_surface"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/dock_glass"
+        android:importantForAccessibility="no" />
+
+</FrameLayout>
