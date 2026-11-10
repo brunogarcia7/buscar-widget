@@ -23,8 +23,9 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Configurar Android SDK
-        uses: android-actions/setup-android@v3
+      # O runner ubuntu-latest já vem com o Android SDK pré-instalado, então
+      # não precisamos da action setup-android (que falhava tentando instalar
+      # o pacote 'tools', já descontinuado). O Gradle usa o SDK do ANDROID_HOME.
 
       - name: Restaurar a keystore a partir do secret
         # O secret KEYSTORE_BASE64 contém a keystore em base64. Ele é decodificado
