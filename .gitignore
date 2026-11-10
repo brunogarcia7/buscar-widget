@@ -18,6 +18,10 @@ local.properties
 keystore.properties
 *.jks
 *.keystore
+keystore-base64.txt
+
+# APKs gerados localmente (são publicados via Releases, não no repo)
+/dist/
 
 # Diretório temporário de distribuição do Gradle baixado localmente
 /gradle-dist/
