@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Metadados do widget.
+    - minWidth/minHeight: tamanho mínimo da pílula.
+    - targetCellWidth/Height (API 31+): ocupa 3x1 células por padrão.
+    - resizeMode horizontal: o usuário pode alargar a pílula.
+    - description (API 31+): texto na gaveta de widgets.
+    - updatePeriodMillis=0: não precisa atualizar sozinho; só o clique importa.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/widget_description"
+    android:initialLayout="@layout/widget_buscar"
+    android:minWidth="110dp"
+    android:minHeight="40dp"
+    android:maxResizeWidth="250dp"
+    android:maxResizeHeight="60dp"
+    android:previewImage="@mipmap/ic_launcher"
+    android:previewLayout="@layout/widget_buscar"
+    android:resizeMode="horizontal"
+    android:targetCellWidth="3"
+    android:targetCellHeight="1"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

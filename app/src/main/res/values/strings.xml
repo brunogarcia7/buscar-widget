@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Buscar Widget</string>
+    <string name="widget_search_hint">Buscar</string>
+    <string name="widget_description">Pílula de busca estilo iOS que abre o app que você escolher.</string>
+    <string name="error_app_not_found">App não encontrado. Escolha outro na lista.</string>
+
+    <!-- Tela de seleção de app -->
+    <string name="picker_title">Escolha o app de busca</string>
+    <string name="picker_subtitle">Toque em um app para abri-lo quando usar o widget. Você pode mudar quando quiser.</string>
+    <string name="picker_empty">Nenhum navegador ou app de busca encontrado neste aparelho.</string>
+    <string name="picker_selected">Selecionado</string>
+    <string name="picker_saved">App definido: %1$s</string>
+
+    <!-- Seção de estilo visual do widget -->
+    <string name="section_style">Visual do widget</string>
+    <string name="section_app">App de busca</string>
+    <string name="style_saved">Visual aplicado</string>
+    <string name="style_glass_light">Vidro claro</string>
+    <string name="style_glass_dark">Vidro escuro</string>
+    <string name="style_frosted">Fosco (blur)</string>
+    <string name="style_solid_light">Sólido claro</string>
+</resources>

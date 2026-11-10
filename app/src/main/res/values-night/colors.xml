@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Cores da pílula em tema escuro =====
+         Sobre papéis de parede escuros, um branco mais contido (~16-18%)
+         mantém o aspecto de vidro sem "estourar" o brilho. -->
+
+    <color name="pill_fill">#2EFFFFFF</color>
+    <color name="pill_stroke">#33FFFFFF</color>
+    <color name="pill_content">#FFFFFFFF</color>
+</resources>

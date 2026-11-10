@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Camada de CONTEÚDO (papel de parede) da tela. É rica e colorida de propósito
+    para o vidro ter algo vivo para refletir e desfocar (liquid glass).
+    O blur real é aplicado por RenderEffect no código (API 31+).
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#FF2B1055"
+                android:centerColor="#FFB5268A"
+                android:endColor="#FFFF5E62"
+                android:type="linear" />
+        </shape>
+    </item>
+    <!-- "Luz" radial no topo para dar brilho e profundidade. -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="520dp"
+                android:centerX="0.2"
+                android:centerY="0.1"
+                android:startColor="#66FFD36E"
+                android:endColor="#00FFD36E" />
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="radial"
+                android:gradientRadius="420dp"
+                android:centerX="0.95"
+                android:centerY="0.85"
+                android:startColor="#553AC0FF"
+                android:endColor="#003AC0FF" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+        A tag <queries> declara o que este app precisa "enxergar". No Android 11
+        (API 30+) a visibilidade de pacotes é restrita, então sem isto o
+        PackageManager não retorna os apps instalados.
+
+        Em vez de fixar UM pacote, declaramos as INTENTS que nos interessam.
+        Assim qualquer navegador / app de busca instalado (hoje ou no futuro)
+        fica visível e aparece na tela de seleção automaticamente.
+    -->
+    <queries>
+        <!-- Navegadores reais: abrem URLs https e são BROWSABLE -->
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="https" />
+        </intent>
+        <!-- Abrir o navegador já na busca -->
+        <intent>
+            <action android:name="android.intent.action.WEB_SEARCH" />
+        </intent>
+        <!-- Busca interna (Pixel Search) -->
+        <intent>
+            <action android:name="android.intent.action.SEARCH" />
+        </intent>
+        <!-- Assistente/busca (fallback do app Google) -->
+        <intent>
+            <action android:name="android.intent.action.ASSIST" />
+        </intent>
+        <!-- Apps de busca especiais por pacote, para sempre aparecerem. -->
+        <package android:name="com.google.android.googlequicksearchbox" />
+        <package android:name="rk.android.app.pixelsearch" />
+    </queries>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BuscarWidget">
+
+        <!-- Tela principal: abre direto o seletor de apps (configuração). -->
+        <activity
+            android:name=".AppPickerActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.BuscarWidget.Glass">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Provedor do widget de tela inicial. -->
+        <receiver
+            android:name=".BuscarWidgetProvider"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/buscar_widget_info" />
+        </receiver>
+
+        <!--
+            Activity "trampolim" invisível acionada pelo clique no widget.
+            Lançar Activity a partir do widget é um lançamento de primeiro plano,
+            então não sofre o bloqueio de Background Activity Launch (Android 10+)
+            que um BroadcastReceiver sofreria.
+            excludeFromRecents + noHistory: não aparece na tela de recentes.
+        -->
+        <activity
+            android:name=".SearchTrampolineActivity"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:noHistory="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.BuscarWidget.Transparent" />
+
+    </application>
+
+</manifest>

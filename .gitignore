@@ -1,0 +1,23 @@
+# ===== Android / Gradle =====
+*.iml
+.gradle/
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+/app/build
+/app/release
+
+# ===== Segredos de assinatura (NUNCA versionar) =====
+# A keystore e as senhas assinam o app. Se vazarem, outra pessoa pode publicar
+# atualizações falsas assinadas como se fossem suas. Mantenha-as fora do Git.
+keystore.properties
+*.jks
+*.keystore
+
+# Diretório temporário de distribuição do Gradle baixado localmente
+/gradle-dist/

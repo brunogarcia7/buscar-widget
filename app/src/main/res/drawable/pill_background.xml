@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Fundo da pílula no estilo iOS "Buscar".
+
+    O efeito de "vidro/blur" é simulado por:
+      1. Preenchimento translúcido (pill_fill) sobre o papel de parede.
+      2. Um leve gradiente vertical (mais claro no topo) que dá a sensação
+         de luz refletindo no material, como no iOS.
+      3. Uma borda clara e fina que define a borda do vidro.
+    O blur real do fundo é aplicado pelo launcher nos aparelhos que suportam;
+    a transparência garante um resultado agradável onde não há blur.
+
+    Cantos totalmente arredondados (radius alto) = formato de pílula.
+-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- Gradiente vertical sutil por cima da cor translúcida -->
+    <gradient
+        android:angle="270"
+        android:startColor="#5AFFFFFF"
+        android:centerColor="#47FFFFFF"
+        android:endColor="#3DFFFFFF"
+        android:type="linear" />
+
+    <!-- Cantos 100% arredondados (pílula) -->
+    <corners android:radius="999dp" />
+
+    <!-- Borda clara e fina reforça o look de vidro -->
+    <stroke
+        android:width="1dp"
+        android:color="@color/pill_stroke" />
+</shape>

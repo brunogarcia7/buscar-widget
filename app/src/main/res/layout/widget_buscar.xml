@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Layout do widget: uma pílula contendo lupa + texto "Buscar".
+
+    O contêiner externo ocupa toda a célula do widget e centraliza a pílula,
+    assim ela não "gruda" nas bordas quando o usuário redimensiona.
+    A pílula (widget_pill) inteira recebe o clique (PendingIntent no provider),
+    reproduzindo o botão "Buscar" do iOS.
+
+    Widgets usam RemoteViews, que suportam só um subconjunto de Views
+    (FrameLayout, LinearLayout, ImageView, TextView...). Por isso usamos essas
+    views básicas em vez de componentes do Material.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/widget_pill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/pill_background"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingStart="18dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="10dp">
+
+        <ImageView
+            android:id="@+id/widget_icon"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_marginEnd="7dp"
+            android:contentDescription="@string/widget_search_hint"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_search" />
+
+        <TextView
+            android:id="@+id/widget_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:maxLines="1"
+            android:text="@string/widget_search_hint"
+            android:textColor="@color/pill_content"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ===== Cores da pílula "Buscar" (tema claro / padrão) ===== -->
+
+    <!--
+        Preenchimento translúcido estilo vidro fosco do iOS.
+        Sobre papéis de parede claros, um branco a ~28% imita bem o material.
+        Formato: #AARRGGBB (os 2 primeiros dígitos = alpha/opacidade).
+    -->
+    <color name="pill_fill">#47FFFFFF</color>
+
+    <!-- Borda clara bem sutil que destaca a borda do "vidro" -->
+    <color name="pill_stroke">#4DFFFFFF</color>
+
+    <!-- Cor da lupa e do texto -->
+    <color name="pill_content">#FFFFFFFF</color>
+
+    <!-- Cores base -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_500">#FF6200EE</color>
+</resources>

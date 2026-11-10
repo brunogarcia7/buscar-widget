@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Painel de vidro (liquid glass) da camada funcional. Translúcido, com
+    gradiente diagonal e um realce (highlight) claro na borda superior que imita
+    a luz tocando o vidro. O blur do conteúdo atrás vem do RenderEffect.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Realce superior (highlight) -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <solid android:color="#59FFFFFF" />
+        </shape>
+    </item>
+    <!-- Corpo do vidro (ligeiramente deslocado para baixo revela o realce) -->
+    <item android:top="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="30dp" />
+            <gradient
+                android:angle="315"
+                android:startColor="#3DFFFFFF"
+                android:centerColor="#26FFFFFF"
+                android:endColor="#1AFFFFFF"
+                android:type="linear" />
+            <stroke android:width="1dp" android:color="#3DFFFFFF" />
+        </shape>
+    </item>
+</layer-list>

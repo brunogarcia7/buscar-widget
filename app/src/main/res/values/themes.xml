@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BuscarWidget" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+    </style>
+
+    <!--
+        Tema da tela de seleção (glassmorphism): sem ActionBar, barras de
+        sistema transparentes para o fundo colorido/vidro aparecer por trás.
+    -->
+    <style name="Theme.BuscarWidget.Glass" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/bg_gradient_wallpaper</item>
+    </style>
+
+    <!--
+        Tema invisível para a Activity trampolim do widget: sem fundo, sem
+        animação, sem título. Abre o app de busca e some.
+    -->
+    <style name="Theme.BuscarWidget.Transparent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>
