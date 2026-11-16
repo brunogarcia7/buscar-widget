@@ -23,19 +23,19 @@
         android:background="@drawable/pill_background"
         android:gravity="center"
         android:orientation="horizontal"
-        android:paddingStart="18dp"
-        android:paddingTop="10dp"
-        android:paddingEnd="20dp"
-        android:paddingBottom="10dp">
+        android:paddingStart="13dp"
+        android:paddingTop="7dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="7dp">
 
         <ImageView
             android:id="@+id/widget_icon"
-            android:layout_width="17dp"
-            android:layout_height="17dp"
-            android:layout_marginEnd="7dp"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginEnd="5dp"
             android:contentDescription="@string/widget_search_hint"
             android:importantForAccessibility="no"
-            android:src="@drawable/ic_search" />
+            android:src="@drawable/ic_search_dark" />
 
         <TextView
             android:id="@+id/widget_label"
@@ -45,8 +45,8 @@
             android:fontFamily="sans-serif-medium"
             android:maxLines="1"
             android:text="@string/widget_search_hint"
-            android:textColor="@color/pill_content"
-            android:textSize="15sp" />
+            android:textColor="#FF1C1C1E"
+            android:textSize="13sp" />
 
     </LinearLayout>
 

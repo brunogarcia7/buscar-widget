@@ -43,8 +43,12 @@ object SearchConfig {
 
     /** Estilo visual do widget escolhido pelo usuário. */
     fun getWidgetStyle(context: Context): WidgetStyle {
-        val name = prefs(context).getString(KEY_WIDGET_STYLE, WidgetStyle.GLASS_LIGHT.name)
-        return runCatching { WidgetStyle.valueOf(name!!) }.getOrDefault(WidgetStyle.GLASS_LIGHT)
+        // Padrão SOLID_LIGHT: pílula branca quase opaca com lupa/texto escuros.
+        // O vidro translúcido (GLASS_LIGHT) ficava invisível sobre papéis de
+        // parede claros — no Android 15 o launcher não garante blur atrás do
+        // widget, então o padrão precisa ter contraste próprio.
+        val name = prefs(context).getString(KEY_WIDGET_STYLE, WidgetStyle.SOLID_LIGHT.name)
+        return runCatching { WidgetStyle.valueOf(name!!) }.getOrDefault(WidgetStyle.SOLID_LIGHT)
     }
 
     /** Salva o estilo visual escolhido. */
