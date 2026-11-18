@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Pílula "Buscar" FINA. Altura mínima bem baixa (30dp) para ficar rente à dock.
+    Largura padrão de ~3 células, altura de 1 célula (curta).
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/thin_widget_description"
+    android:initialLayout="@layout/widget_buscar_thin"
+    android:previewLayout="@layout/widget_buscar_thin"
+    android:previewImage="@mipmap/ic_launcher"
+    android:minWidth="110dp"
+    android:minHeight="30dp"
+    android:minResizeWidth="80dp"
+    android:minResizeHeight="30dp"
+    android:maxResizeWidth="300dp"
+    android:maxResizeHeight="60dp"
+    android:resizeMode="horizontal|vertical"
+    android:targetCellWidth="3"
+    android:targetCellHeight="1"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

@@ -80,6 +80,19 @@
                 android:resource="@xml/dock_widget_info" />
         </receiver>
 
+        <!-- Widget 3: pílula "Buscar" FINA (baixa, rente à dock). -->
+        <receiver
+            android:name=".ThinPillWidgetProvider"
+            android:exported="true"
+            android:label="@string/thin_widget_label">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/thin_pill_widget_info" />
+        </receiver>
+
         <!--
             Activity "trampolim" invisível acionada pelo clique no widget.
             Lançar Activity a partir do widget é um lançamento de primeiro plano,

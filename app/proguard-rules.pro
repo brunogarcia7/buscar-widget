@@ -4,6 +4,7 @@
 # Mantê-los evita que o R8 os remova/renomeie e quebre o widget.
 -keep class com.example.buscarwidget.BuscarWidgetProvider { *; }
 -keep class com.example.buscarwidget.DockWidgetProvider { *; }
+-keep class com.example.buscarwidget.ThinPillWidgetProvider { *; }
 -keep class com.example.buscarwidget.SearchTrampolineActivity { *; }
 -keep class com.example.buscarwidget.AppPickerActivity { *; }
 
